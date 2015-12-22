@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="edu.uic.cs478.Muthiah.Server"
+      android:versionCode="1"
+      android:versionName="1.0">
+      
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="19" />
+    
+    <permission android:name="edu.uic.cs478.Muthiah.Server.GEN_ID"></permission>
+    <application 
+        android:allowBackup="false"
+        android:label="@string/app_name" 
+        android:icon="@drawable/ic_launcher">
+        
+        <service
+            android:label="@string/app_name"
+            android:name="AudioServer"
+            android:exported="true"
+            android:permission="edu.uic.cs478.Muthiah.Server.GEN_ID"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="edu.uic.cs478.Muthiah.Service.MusicKey" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
